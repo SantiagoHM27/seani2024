@@ -27,7 +27,7 @@ class Stage(models.Model):
         return self.application_date.year
     year.short_description = 'Año'
     
-    def _str_(self):
+    def __str__(self):
         return f"{ self.stage } - { self.month() } { self.year() }"
     
     class Meta:
@@ -81,7 +81,7 @@ class Exam(models.Model):
                         correct = question.correct
                         )
     
-    def _str_(self):
+    def __str__(self):
         return f"{ self.user } - { self.career } - { self.score }"
     
     class Meta:
@@ -104,7 +104,7 @@ class ExamModule(models.Model):
         default=0.0,
         verbose_name = "Puntaje")
     
-    def _str_(self):
+    def __str__(self):
         return f"{ self.module } - { self.score }"
 
 class Breakdown(models.Model):
@@ -125,5 +125,5 @@ class Breakdown(models.Model):
         default = '_',
         verbose_name = "Respuesta Correcta")
     
-    def _str_(self):
+    def __str__(self):
         return f"{ self.question } - { self.answer }"

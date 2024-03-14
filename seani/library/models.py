@@ -14,7 +14,7 @@ class Module(models.Model):
         return self.question_set.count()
     num_questions.short_description = 'Numero de Preguntas'
 
-    def _str_(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -56,7 +56,7 @@ class Question(models.Model):
         verbose_name = 'Respuesta Correcta',
         max_length = 5)
     
-    def _str_(self):
+    def __str__(self):
         return f"{ self.module } Pregunta { self.id }"
     
     class Meta:
